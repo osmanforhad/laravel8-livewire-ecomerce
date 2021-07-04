@@ -24,6 +24,7 @@ use App\Http\Livewire\Admin\EditProductComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\ProductDetails;
 use App\Http\Livewire\SearchResultComponent;
+use App\Http\Livewire\ThankyouComponent;
 use App\Http\Livewire\WishlistComponent;
 
 /*
@@ -47,7 +48,7 @@ Route::get('/shop', Shop::class);
 
 Route::get('/cart', CartComponent::class)->name('product.cart');
 
-Route::get('/checkout', Checkout::class);
+Route::get('/checkout', Checkout::class)->name('checkout');
 
 Route::get('/product/{slug}', ProductDetails::class)->name('product.details');
 
@@ -56,6 +57,8 @@ Route::get('/product-category/{category_slug}', CategoryComponent::class)->name(
 Route::get('/search', SearchResultComponent::class)->name('product.search');
 
 Route::get('/wishlist', WishlistComponent::class)->name('product.wishlist');
+
+Route::get('/thank-you', ThankyouComponent::class)->name('thankyou');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
