@@ -16,4 +16,10 @@ class OrderItem extends Model
     {
         return $this->belongsTo(Order::class);
     }
+
+    //function for setup relationship with products table
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
