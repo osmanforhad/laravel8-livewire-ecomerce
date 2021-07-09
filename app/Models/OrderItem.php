@@ -22,4 +22,11 @@ class OrderItem extends Model
     {
         return $this->belongsTo(Product::class);
     }
+
+    //function for setup relationship with review table
+    public function review()
+    {
+
+        return $this->hasOne(Review::class, 'order_item_id');
+    }
 }

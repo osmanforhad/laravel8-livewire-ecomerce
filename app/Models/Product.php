@@ -15,4 +15,11 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+     //function for setup relationship with orderItem table
+     public function orderItems()
+     {
+ 
+         return $this->hasMany(OrderItem::class, 'product_id');
+     }
 }
