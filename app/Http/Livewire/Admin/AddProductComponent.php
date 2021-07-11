@@ -25,6 +25,7 @@ class AddProductComponent extends Component
     public $quantity;
     public $image;
     public $category_id;
+    public $images;
 
     //function for setup default value
     public function mount()
@@ -86,11 +87,27 @@ class AddProductComponent extends Component
         $product->featured = $this->featured;
         $product->quantity = $this->quantity;
 
-        //for upload product into products folder
+        //for upload product image into products folder
         $imageName = Carbon::now()->timestamp . '_' . $this->image->extension();
         $this->image->storeAs('products', $imageName);
 
         $product->image = $imageName;
+
+        if ($this->images) {
+
+            $imagesName = '';
+
+            foreach ($this->images as $key => $image) {
+
+                //for upload product images into products folder
+                $imgName = Carbon::now()->timestamp . $key. '_' . $image->extension();
+                $image->storeAs('products', $imaName);
+
+                $imagesName = $imagesName . ',' . $imgName;
+            }
+            $product->images = $imagesName;
+        }
+
         $product->category_id = $this->category_id;
 
         $product->save();
