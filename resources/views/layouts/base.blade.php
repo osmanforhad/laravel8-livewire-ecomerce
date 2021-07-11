@@ -110,6 +110,9 @@
 				<li class="menu-item" >
 					<a title="Contact Messages" href="{{route('admin.contact')}}">Contact Messages</a>
 				</li>
+				<li class="menu-item" >
+					<a title="Settings" href="{{route('admin.settings')}}">Settings</a>
+				</li>
 				<li class="menu-item">
 					<a href="{{route('logout')}}" 
 					onClick="event.preventDefault(); document.getElementById('logout-form').submit();">
